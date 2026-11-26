@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @NamedQuery(
-        name ="Erp.getMaleStudents",
+        name ="ERP.getMaleStudents",
         query = "SELECT e FROM ERP e WHERE e.gender =:gender"
 )
 @Data
