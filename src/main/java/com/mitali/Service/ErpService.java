@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ErpService {
 
-    public List<ERP> getStudents(Gender gender);
+    public List<ERP> getStudents();
 
     public ERP SaveStudents(ERP student);
 }

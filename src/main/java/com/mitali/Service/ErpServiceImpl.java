@@ -6,6 +6,7 @@ import com.mitali.Repository.ErpRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -16,8 +17,11 @@ public class ErpServiceImpl implements ErpService {
 
 
     @Override
-    public List<ERP> getStudents(Gender gender) {
-        return erpRepository.getStudentsByGender(gender);
+    public List<ERP> getStudents() {
+        Iterable<ERP> erplist =erpRepository.findAll();
+        List<ERP> list = new ArrayList<>();
+        erplist.forEach(list::add);
+        return list;
     }
 
     @Override

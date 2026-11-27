@@ -8,6 +8,8 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class MyRunner implements ApplicationRunner {
 
@@ -24,11 +26,20 @@ public class MyRunner implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
-        ERP e1 = new ERP(1,"AA", Gender.MALE,90.0);
-        ERP e2 = new ERP(2,"BB", Gender.FEMALE,94.0);
+        // Use Case - Save Student
+//
+//        ERP e3 = new ERP(3,"CC", Gender.MALE,80.0);
+//        ERP e4 = new ERP(4,"DD", Gender.FEMALE,84.0);
+//
+//        erpService.SaveStudents(e3);
+//        erpService.SaveStudents(e4); mmmmmm
 
-        erpService.SaveStudents(e1);
-        erpService.SaveStudents(e2);
+        List<ERP> erplist = erpService.getStudents();
+        for (ERP e: erplist) {
+            printStudent(e);
+        }
+
+
 
 
 
